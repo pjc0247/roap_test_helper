@@ -16,15 +16,20 @@ module Roap
       end
 
       @@tests.each do |test|
-        method = test[:klass].singleton_method test[:method_name]
+        if test[:type] == :singleton_method
+          method = test[:klass].singleton_method test[:method_name]
         
-        result = method.call *test[:args]
+          result = method.call *test[:args]
+        elsif test[:type] == :code
+          result = eval test[:code]
+        end
+        
         if result != test[:should]
           STDERR.puts "test faild / #{test[:klass]}::#{test[:method_name]}"
           STDERR.puts "  => #{result} / should #{test[:should]}"
 
           if options.include? :stop_on_failure
-            puts "test_all stopped by stop_on_failure option"
+            STDERR.puts "test_all stopped by stop_on_failure option"
             break
           end
         end
