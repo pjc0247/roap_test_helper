@@ -4,7 +4,7 @@ roap_test_helper
 
 Extension Attributes
 ----
-* test-me [args] => result
+* __test-me__ [args] => result
 
   ```rb
   class Foo
@@ -17,5 +17,5 @@ Extension Attributes
 
 Options
 ----
-* :suppress_stdout : 
-* :stop_on_failure :
+* __:suppress_stdout__ : 
+* __:stop_on_failure__ :
