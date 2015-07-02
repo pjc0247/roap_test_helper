@@ -14,6 +14,18 @@ Extension Attributes
     end
   end
   ```
+* __@example__
+
+  ```rb
+  class Foo
+    # @example
+    #   v = Foo.new
+    #   v.zoo "MILK", "DOT" #"MILKDOT"
+    def zoo msg1, msg2
+      return msg1 + msg2
+    end
+  end
+  ```
 
 Options
 ----
