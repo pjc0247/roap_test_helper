@@ -9,7 +9,7 @@ __*options__<br>
   * :stop_on_failure
     * 테스트가 실패하면 이후의 테스트는 실행하지 않고 테스팅을 마칩니다.
   * :suppress_stdout
-    * 테스트 중일 때 STDOUT으로 출력되는것을 방지합니다.
+    * 테스트 중일 때 STDOUT으로의 출력을 차단합니다.
 
 ```rb
 options = [:stop_on_failure, :suppress_stdout]
