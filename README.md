@@ -38,8 +38,3 @@ options = [:suppress_stdout, :stop_on_failure]
 
 Roap::TestHelper::test_all *options
 ```
-
-Options
-----
-* __:suppress_stdout__ : 테스트 동안 STDOUT으로의 출력을 차단합니다.
-* __:stop_on_failure__ : 실패한 테스트가 있을 경우 바로 모든 테스트를 중단합니다.
