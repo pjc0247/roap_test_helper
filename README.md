@@ -1,7 +1,7 @@
 roap_test_helper
 ====
 Roap을 이용한 테스트 프레임워크입니다.<br>
-주석의 @example에 작성된 예제 코드들과 테스팅을 연동시킬 수 있도록 도와줍니다.
+주석에 작성된 예제 코드들과 테스팅을 연동시킬 수 있도록 도와줍니다.
 
 Extension Attributes
 ----
