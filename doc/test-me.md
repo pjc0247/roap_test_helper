@@ -1,7 +1,5 @@
-test-me
+test-me [args] => result
 ====
-
-* __test-me__ [args] => result
 
 테스트 타임에 메소드를 실행합니다.<br>
 메소드는 반드시 클래스 메소드이어야 합니다.
