@@ -39,18 +39,32 @@ module Roap
         if test[:type] == :singleton_method
           method = test[:klass].singleton_method test[:method_name]
         
-          result = method.call *test[:args]
+          begin
+            result = method.call *test[:args]
+          rescue Exception => e
+            exception = e
+          end
         elsif test[:type] == :code
-          result = eval test[:code]
+          begin
+            result = eval test[:code]
+          rescue Exception => e
+            exception = e
+          end
         end
 
         #teardown
         EnvManager::teardown test[:klass]
         EnvManager::teardown :global
         
-        if result != test[:should]
+        if exception or result != test[:should] and
+          exception.class != test[:should]
+
           STDERR.puts "test faild / #{test[:klass]}::#{test[:method_name]}"
           STDERR.puts "  => #{result} / should #{test[:should]}"
+
+          if exception
+            STDERR.puts "  => #{exception}"
+          end
 
           if options.include? :stop_on_failure
             STDERR.puts "test_all stopped by stop_on_failure option"
