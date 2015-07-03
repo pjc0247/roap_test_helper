@@ -17,15 +17,15 @@ module Roap
           :args => args,
           :should => should})
       end
-
+      
       #static
       on capture_under("@example") do |klass, method, md|
         body = Roap::Utils::decomment md[:body]
         last = Ripper.lex(body.lines.last).last
 
         if last[1] == :on_comment
-          last[2].gsub! /^#*/, ""
-          
+          last[2].gsub! /^#=>*/, ""
+
           should = eval last[2]
 
           TestHelper::tests.push({
