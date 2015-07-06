@@ -18,7 +18,7 @@ Extension Attributes
     end
   end
   ```
-* __@example__ &block
+* __@example__ &block #=> result
 
   ```rb
   class Foo
