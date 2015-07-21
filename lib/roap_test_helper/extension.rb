@@ -19,8 +19,8 @@ module Roap
       end
       
       #static
-      on capture_under("@example") do |klass, method, md|
-        body = Roap::Utils::decomment md[:body]
+      on /@example()/ do |klass, method, md|
+        body = Roap::Utils::decomment __example__
         last = Ripper.lex(body.lines.last).last
 
         if last[1] == :on_comment
