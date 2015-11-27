@@ -6,6 +6,12 @@ Roap을 이용한 테스트 프레임워크입니다.<br>
 
 * [Documentation](doc)
 
+Installation
+----
+```
+gem install roap_test_helper
+```
+
 Extension Attributes
 ----
 * __test-me__ [args] => result
